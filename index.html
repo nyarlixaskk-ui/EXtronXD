@@ -3,107 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="EXtronXD01 — Professional Minecraft Thumbnail Designer and Logo Artist.">
+<meta name="description" content="EXtronXD01 — Minecraft Thumbnail Designer and Logo Artist.">
+<meta name="theme-color" content="#eafffb">
+
 <title>EXtronXD01 | Creative Portfolio</title>
 
 <style>
-:root{
+:root {
     --aqua:#5fffe6;
-    --aqua-light:#dffffa;
+    --aqua-dark:#0ebbad;
     --cyan:#22d3ee;
-    --dark:#07171b;
-    --card:#ffffff;
+    --bg:#f5fffd;
     --text:#102529;
     --muted:#64777b;
+    --white:#ffffff;
 }
 
-*{
+* {
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-html{
+html {
     scroll-behavior:smooth;
 }
 
-body{
+body {
     font-family:Inter,Segoe UI,Arial,sans-serif;
     color:var(--text);
     background:
         radial-gradient(circle at 10% 10%,rgba(95,255,230,.25),transparent 35%),
         radial-gradient(circle at 90% 30%,rgba(34,211,238,.16),transparent 35%),
-        #f5fffd;
+        var(--bg);
     overflow-x:hidden;
 }
 
-a{
+a {
     text-decoration:none;
     color:inherit;
 }
 
-.container{
+button {
+    font-family:inherit;
+}
+
+img {
+    max-width:100%;
+}
+
+.container {
     width:min(1180px,90%);
     margin:auto;
 }
 
+
 /* NAVBAR */
 
-nav{
+nav {
     position:fixed;
     width:100%;
     top:0;
     z-index:1000;
     padding:18px 0;
-    background:rgba(245,255,253,.72);
+    background:rgba(245,255,253,.75);
     backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
     border-bottom:1px solid rgba(20,150,145,.12);
 }
 
-.navbar{
+.navbar {
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
 
-.brand{
+.brand {
     font-size:22px;
     font-weight:900;
     letter-spacing:-1px;
 }
 
-.brand span{
-    color:#0ebbad;
+.brand span {
+    color:var(--aqua-dark);
 }
 
-.nav-links{
+.nav-links {
     display:flex;
     gap:28px;
     font-size:14px;
     font-weight:700;
 }
 
-.nav-links a:hover{
-    color:#0ebbad;
+.nav-links a {
+    transition:.25s;
 }
+
+.nav-links a:hover {
+    color:var(--aqua-dark);
+}
+
 
 /* HERO */
 
-.hero{
+.hero {
     min-height:100vh;
     display:flex;
     align-items:center;
     padding:130px 0 70px;
 }
 
-.hero-grid{
+.hero-grid {
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:70px;
     align-items:center;
 }
 
-.badge{
+.badge {
     display:inline-flex;
     align-items:center;
     padding:8px 14px;
@@ -116,69 +133,77 @@ nav{
     margin-bottom:22px;
 }
 
-.hero h1{
+.hero h1 {
     font-size:clamp(50px,7vw,90px);
     line-height:.95;
     letter-spacing:-5px;
     margin-bottom:25px;
 }
 
-.hero h1 span{
-    color:#10bfae;
+.hero h1 span {
+    color:var(--aqua-dark);
 }
 
-.hero p{
+.hero p {
     max-width:580px;
     font-size:18px;
     color:var(--muted);
     line-height:1.7;
 }
 
-.buttons{
+.buttons {
     display:flex;
     gap:14px;
     margin-top:32px;
 }
 
-.btn{
+.btn {
     display:inline-flex;
+    align-items:center;
+    justify-content:center;
     padding:14px 22px;
     border-radius:12px;
     font-weight:800;
     transition:.25s;
 }
 
-.btn-primary{
+.btn-primary {
     color:white;
     background:linear-gradient(135deg,#13cdb8,#22d3ee);
     box-shadow:0 15px 35px rgba(20,200,185,.25);
 }
 
-.btn-secondary{
+.btn-secondary {
     background:white;
     border:1px solid rgba(20,120,120,.18);
 }
 
-.btn:hover{
+.btn:hover {
     transform:translateY(-3px);
 }
 
-/* HERO ART */
 
-.hero-art{
+/* HERO IMAGES */
+
+.hero-art {
     position:relative;
     min-height:550px;
 }
 
-.hero-art img{
+.hero-art img {
     position:absolute;
     object-fit:cover;
     border-radius:22px;
     border:5px solid rgba(255,255,255,.9);
     box-shadow:0 30px 70px rgba(7,55,60,.2);
+    transition:.4s;
 }
 
-.hero-art .one{
+.hero-art img:hover {
+    transform:translateY(-8px) rotate(0deg);
+}
+
+.hero-art .one {
     width:75%;
     height:330px;
     top:20px;
@@ -186,7 +211,7 @@ nav{
     transform:rotate(4deg);
 }
 
-.hero-art .two{
+.hero-art .two {
     width:65%;
     height:280px;
     left:0;
@@ -194,7 +219,7 @@ nav{
     transform:rotate(-5deg);
 }
 
-.hero-art .three{
+.hero-art .three {
     width:190px;
     height:190px;
     right:15px;
@@ -202,13 +227,14 @@ nav{
     transform:rotate(6deg);
 }
 
-/* SECTIONS */
 
-section{
+/* GENERAL SECTIONS */
+
+section {
     padding:100px 0;
 }
 
-.section-head{
+.section-head {
     display:flex;
     justify-content:space-between;
     align-items:end;
@@ -216,7 +242,7 @@ section{
     margin-bottom:45px;
 }
 
-.eyebrow{
+.eyebrow {
     color:#0fae9e;
     font-weight:900;
     text-transform:uppercase;
@@ -224,35 +250,42 @@ section{
     font-size:12px;
 }
 
-.section-head h2{
+.section-head h2 {
     margin-top:8px;
     font-size:clamp(35px,5vw,60px);
     letter-spacing:-3px;
 }
 
-.section-head p{
+.section-head p {
     max-width:450px;
     color:var(--muted);
     line-height:1.7;
 }
 
+
 /* THUMBNAILS */
 
-.gallery{
+.gallery {
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:24px;
 }
 
-.work{
+.work {
     overflow:hidden;
     border-radius:22px;
     background:white;
     box-shadow:0 18px 50px rgba(20,80,80,.1);
     cursor:pointer;
+    transition:.35s;
 }
 
-.work img{
+.work:hover {
+    transform:translateY(-7px);
+    box-shadow:0 28px 60px rgba(20,80,80,.16);
+}
+
+.work img {
     display:block;
     width:100%;
     aspect-ratio:16/9;
@@ -260,98 +293,124 @@ section{
     transition:.5s;
 }
 
-.work:hover img{
+.work:hover img {
     transform:scale(1.05);
 }
 
-.work-info{
+.work-info {
     padding:20px;
 }
 
-.work-info h3{
+.work-info h3 {
     font-size:18px;
 }
 
-.work-info p{
+.work-info p {
     margin-top:6px;
     color:var(--muted);
     font-size:14px;
 }
 
+
 /* LOGOS */
 
-.logo-section{
-    background:linear-gradient(180deg,transparent,rgba(95,255,230,.13),transparent);
+.logo-section {
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(95,255,230,.13),
+            transparent
+        );
 }
 
-.logo-grid{
+.logo-grid {
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(3,1fr);
     gap:28px;
 }
 
-.logo-card{
+.logo-card {
     background:rgba(255,255,255,.85);
-    padding:20px;
+    padding:18px;
     border-radius:24px;
     box-shadow:0 20px 50px rgba(20,90,90,.1);
+    cursor:pointer;
+    transition:.35s;
 }
 
-.logo-card img{
+.logo-card:hover {
+    transform:translateY(-7px);
+    box-shadow:0 28px 60px rgba(20,90,90,.16);
+}
+
+.logo-card img {
     display:block;
     width:100%;
     aspect-ratio:1/1;
     object-fit:cover;
     border-radius:16px;
+    transition:.4s;
 }
+
+.logo-card:hover img {
+    transform:scale(1.03);
+}
+
 
 /* ABOUT */
 
-.about{
+.about {
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:70px;
     align-items:center;
 }
 
-.about h2{
+.about h2 {
     font-size:clamp(40px,5vw,65px);
     letter-spacing:-3px;
     line-height:1;
 }
 
-.about p{
+.about p {
     color:var(--muted);
     line-height:1.8;
     margin-top:20px;
 }
 
-.stats{
+.stats {
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:18px;
 }
 
-.stat{
+.stat {
     padding:30px;
     background:white;
     border:1px solid rgba(20,150,145,.12);
     border-radius:20px;
+    transition:.3s;
 }
 
-.stat strong{
+.stat:hover {
+    transform:translateY(-5px);
+}
+
+.stat strong {
     display:block;
     font-size:34px;
-    color:#0ebbad;
+    color:var(--aqua-dark);
 }
 
-.stat span{
+.stat span {
     color:var(--muted);
 }
 
+
 /* CONTACT */
 
-.contact-card{
+.contact-card {
     padding:70px 30px;
     text-align:center;
     border-radius:32px;
@@ -361,67 +420,71 @@ section{
     border:1px solid rgba(20,170,160,.16);
 }
 
-.contact-card h2{
+.contact-card h2 {
     font-size:clamp(40px,6vw,70px);
     letter-spacing:-4px;
 }
 
-.contact-card p{
+.contact-card p {
     color:var(--muted);
     margin:18px auto 30px;
     max-width:580px;
     line-height:1.7;
 }
 
-.socials{
+.socials {
     display:flex;
     justify-content:center;
     gap:15px;
     flex-wrap:wrap;
 }
 
-.social{
+.social {
     padding:14px 22px;
     border-radius:12px;
     background:#081d20;
     color:white;
     font-weight:800;
+    border:0;
+    cursor:pointer;
     transition:.25s;
 }
 
-.social:hover{
+.social:hover {
     transform:translateY(-3px);
-    background:#0ebbad;
+    background:var(--aqua-dark);
 }
+
 
 /* FOOTER */
 
-footer{
+footer {
     padding:35px 0;
     text-align:center;
     color:var(--muted);
     border-top:1px solid rgba(20,120,120,.1);
 }
 
+
 /* LIGHTBOX */
 
-.lightbox{
+.lightbox {
     position:fixed;
     inset:0;
     z-index:2000;
-    background:rgba(2,15,18,.9);
+    background:rgba(2,15,18,.92);
     display:none;
     align-items:center;
     justify-content:center;
     padding:25px;
-    cursor:pointer;
+    cursor:zoom-out;
 }
 
-.lightbox.active{
+.lightbox.active {
     display:flex;
 }
 
-.lightbox img{
+.lightbox img {
     max-width:1100px;
     max-height:90vh;
     width:100%;
@@ -429,90 +492,151 @@ footer{
     border-radius:15px;
 }
 
-/* ANIMATION */
 
-.reveal{
+/* REVEAL ANIMATION */
+
+.reveal {
     opacity:0;
     transform:translateY(30px);
     transition:.7s ease;
 }
 
-.reveal.visible{
+.reveal.visible {
     opacity:1;
     transform:none;
 }
 
+
+/* TABLET */
+
+@media(max-width:950px) {
+
+    .logo-grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+
 /* MOBILE */
 
-@media(max-width:800px){
+@media(max-width:800px) {
 
-    .nav-links{
+    .nav-links {
         display:none;
     }
 
     .hero-grid,
-    .about{
+    .about {
         grid-template-columns:1fr;
     }
 
-    .hero{
+    .hero {
         text-align:center;
     }
 
-    .hero p{
+    .hero p {
         margin:auto;
     }
 
-    .buttons{
+    .buttons {
         justify-content:center;
         flex-wrap:wrap;
     }
 
-    .hero h1{
+    .hero h1 {
         letter-spacing:-3px;
     }
 
-    .hero-art{
+    .hero-art {
         min-height:430px;
     }
 
-    .section-head{
+    .section-head {
         display:block;
     }
 
-    .section-head p{
+    .section-head p {
         margin-top:15px;
     }
 
-    .gallery{
+    .gallery {
         grid-template-columns:1fr;
+    }
+
+    .logo-grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+
+@media(max-width:500px) {
+
+    .logo-grid {
+        grid-template-columns:1fr;
+    }
+
+    .stats {
+        grid-template-columns:1fr 1fr;
+    }
+
+    .hero-art {
+        min-height:350px;
+    }
+
+    .hero-art .one {
+        height:220px;
+    }
+
+    .hero-art .two {
+        height:190px;
+    }
+
+    .hero-art .three {
+        width:130px;
+        height:130px;
     }
 }
 
 </style>
 </head>
 
+
 <body>
 
+
+<!-- NAVIGATION -->
+
 <nav>
+
 <div class="container navbar">
-    <a class="brand" href="#">EXtron<span>XD01</span></a>
+
+    <a class="brand" href="#">
+        EXtron<span>XD01</span>
+    </a>
 
     <div class="nav-links">
-        <a href="#work">Work</a>
+        <a href="#work">Thumbnails</a>
         <a href="#logos">Logos</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
     </div>
+
 </div>
+
 </nav>
 
 
+<!-- HERO -->
+
 <header class="hero">
+
 <div class="container hero-grid">
 
     <div>
-        <div class="badge">MINECRAFT VISUAL DESIGNER</div>
+
+        <div class="badge">
+            MINECRAFT VISUAL DESIGNER
+        </div>
 
         <h1>
             Visuals made to
@@ -521,14 +645,22 @@ footer{
 
         <p>
             High-impact Minecraft thumbnails and distinctive logo designs
-            created to make creators, videos and gaming brands impossible
-            to ignore.
+            created to help creators, videos and gaming brands capture
+            attention and build a recognizable identity.
         </p>
 
         <div class="buttons">
-            <a class="btn btn-primary" href="#work">Explore My Work</a>
-            <a class="btn btn-secondary" href="#contact">Work With Me</a>
+
+            <a class="btn btn-primary" href="#work">
+                Explore My Work
+            </a>
+
+            <a class="btn btn-secondary" href="#contact">
+                Work With Me
+            </a>
+
         </div>
+
     </div>
 
 
@@ -536,24 +668,27 @@ footer{
 
         <img
             class="one"
-            src="images/thumb4.png"
+            src="thumb4.png"
             alt="Minecraft Thumbnail">
 
         <img
             class="two"
-            src="images/thumb8.png"
+            src="thumb8.png"
             alt="Minecraft Thumbnail">
 
         <img
             class="three"
-            src="images/logo1.png"
+            src="logo1.png"
             alt="EXtronXD01 Logo">
 
     </div>
 
 </div>
+
 </header>
 
+
+<!-- THUMBNAIL SECTION -->
 
 <section id="work">
 
@@ -562,13 +697,18 @@ footer{
     <div class="section-head reveal">
 
         <div>
-            <div class="eyebrow">Selected Projects</div>
+
+            <div class="eyebrow">
+                Selected Projects
+            </div>
+
             <h2>Thumbnail Work.</h2>
+
         </div>
 
         <p>
-            A selection of cinematic Minecraft thumbnails focused on
-            strong composition, atmosphere, storytelling and click appeal.
+            A collection of cinematic Minecraft thumbnails focused on
+            strong composition, storytelling, atmosphere and click appeal.
         </p>
 
     </div>
@@ -576,76 +716,150 @@ footer{
 
     <div class="gallery">
 
+
         <article class="work reveal">
-            <img src="images/thumb1.png" alt="End Portal Minecraft Thumbnail">
+
+            <img src="thumb1.png" alt="End Portal Adventure Thumbnail">
+
             <div class="work-info">
-                <h3>The End Portal</h3>
+                <h3>End Portal Adventure</h3>
                 <p>Cinematic Minecraft Thumbnail</p>
             </div>
+
         </article>
 
 
         <article class="work reveal">
-            <img src="images/thumb2.png" alt="Minecraft Horror Thumbnail">
+
+            <img src="thumb2.png" alt="Nightmare Survival Thumbnail">
+
             <div class="work-info">
                 <h3>Nightmare Survival</h3>
                 <p>Horror Minecraft Thumbnail</p>
             </div>
+
         </article>
 
 
         <article class="work reveal">
-            <img src="images/thumb3.png" alt="Attack on Titan Minecraft Thumbnail">
+
+            <img src="thumb3.png" alt="Titan Invasion Thumbnail">
+
             <div class="work-info">
-                <h3>Titan Battle</h3>
+                <h3>Titan Invasion</h3>
                 <p>Action Minecraft Thumbnail</p>
             </div>
+
         </article>
 
 
         <article class="work reveal">
-            <img src="images/thumb4.png" alt="Minecraft Dimensions Thumbnail">
+
+            <img src="thumb4.png" alt="Four Dimensions Thumbnail">
+
             <div class="work-info">
                 <h3>Four Dimensions</h3>
                 <p>Fantasy Minecraft Thumbnail</p>
             </div>
+
         </article>
 
 
         <article class="work reveal">
-            <img src="images/thumb5.png" alt="Minecraft Portal Thumbnail">
+
+            <img src="thumb5.png" alt="Into The Void Thumbnail">
+
             <div class="work-info">
                 <h3>Into The Void</h3>
-                <p>Story-Driven Minecraft Thumbnail</p>
+                <p>Story-Based Minecraft Thumbnail</p>
             </div>
+
         </article>
 
 
         <article class="work reveal">
-            <img src="images/thumb6.png" alt="Minecraft Items Thumbnail">
+
+            <img src="thumb6.png" alt="Ultimate Items Thumbnail">
+
             <div class="work-info">
                 <h3>Ultimate Items</h3>
-                <p>Gaming Content Thumbnail</p>
+                <p>Gaming Minecraft Thumbnail</p>
             </div>
+
         </article>
 
 
         <article class="work reveal">
-            <img src="images/thumb7.png" alt="Minecraft Wanted Thumbnail">
+
+            <img src="thumb7.png" alt="Most Wanted Thumbnail">
+
             <div class="work-info">
                 <h3>Most Wanted</h3>
                 <p>Minecraft Story Thumbnail</p>
             </div>
+
         </article>
 
 
         <article class="work reveal">
-            <img src="images/thumb8.png" alt="Minecraft Horror Thumbnail">
+
+            <img src="thumb8.png" alt="The Chase Thumbnail">
+
             <div class="work-info">
                 <h3>The Chase</h3>
                 <p>Dark Cinematic Thumbnail</p>
             </div>
+
         </article>
+
+
+        <article class="work reveal">
+
+            <img src="thumb9.png" alt="Minecraft Thumbnail 9">
+
+            <div class="work-info">
+                <h3>Featured Project IX</h3>
+                <p>Minecraft Thumbnail Design</p>
+            </div>
+
+        </article>
+
+
+        <article class="work reveal">
+
+            <img src="thumb10.png" alt="Minecraft Thumbnail 10">
+
+            <div class="work-info">
+                <h3>Featured Project X</h3>
+                <p>Minecraft Thumbnail Design</p>
+            </div>
+
+        </article>
+
+
+        <article class="work reveal">
+
+            <img src="thumb11.png" alt="Minecraft Thumbnail 11">
+
+            <div class="work-info">
+                <h3>Featured Project XI</h3>
+                <p>Minecraft Thumbnail Design</p>
+            </div>
+
+        </article>
+
+
+        <article class="work reveal">
+
+            <img src="thumb12.png" alt="Minecraft Thumbnail 12">
+
+            <div class="work-info">
+                <h3>Featured Project XII</h3>
+                <p>Minecraft Thumbnail Design</p>
+            </div>
+
+        </article>
+
 
     </div>
 
@@ -653,6 +867,8 @@ footer{
 
 </section>
 
+
+<!-- LOGO SECTION -->
 
 <section class="logo-section" id="logos">
 
@@ -661,13 +877,18 @@ footer{
     <div class="section-head reveal">
 
         <div>
-            <div class="eyebrow">Identity Design</div>
+
+            <div class="eyebrow">
+                Identity Design
+            </div>
+
             <h2>Logo Showcase.</h2>
+
         </div>
 
         <p>
-            Clean Minecraft-inspired identities designed for creators,
-            gaming communities and digital brands.
+            Minecraft-inspired logo and identity designs created for
+            creators, gaming communities and digital brands.
         </p>
 
     </div>
@@ -675,13 +896,36 @@ footer{
 
     <div class="logo-grid">
 
-        <div class="logo-card reveal">
-            <img src="images/logo1.png" alt="Purple Minecraft Logo Design">
-        </div>
 
         <div class="logo-card reveal">
-            <img src="images/logo2.png" alt="Black and White Minecraft Logo Design">
+            <img src="logo1.png" alt="Logo Design 1">
         </div>
+
+
+        <div class="logo-card reveal">
+            <img src="logo2.png" alt="Logo Design 2">
+        </div>
+
+
+        <div class="logo-card reveal">
+            <img src="logo3.png" alt="Logo Design 3">
+        </div>
+
+
+        <div class="logo-card reveal">
+            <img src="logo4.png" alt="Logo Design 4">
+        </div>
+
+
+        <div class="logo-card reveal">
+            <img src="logo5.png" alt="Logo Design 5">
+        </div>
+
+
+        <div class="logo-card reveal">
+            <img src="logo6.png" alt="Logo Design 6">
+        </div>
+
 
     </div>
 
@@ -690,25 +934,32 @@ footer{
 </section>
 
 
+<!-- ABOUT -->
+
 <section id="about">
 
 <div class="container about">
 
+
     <div class="reveal">
 
-        <div class="eyebrow">About The Designer</div>
+        <div class="eyebrow">
+            About The Designer
+        </div>
 
         <h2>
-            Building visuals
-            people remember.
+            Building visuals people remember.
         </h2>
 
         <p>
             I'm EXtronXD01, a Minecraft visual designer focused on
             cinematic thumbnails and creator branding.
+        </p>
 
-            My goal is simple: create visuals that communicate instantly,
-            attract attention and give every project its own identity.
+        <p>
+            My goal is to create visuals that communicate instantly,
+            attract attention and give every creator or gaming project
+            its own recognizable identity.
         </p>
 
     </div>
@@ -716,25 +967,30 @@ footer{
 
     <div class="stats reveal">
 
+
         <div class="stat">
-            <strong>8+</strong>
+            <strong>12</strong>
             <span>Featured Thumbnails</span>
         </div>
 
+
         <div class="stat">
-            <strong>2</strong>
-            <span>Logo Concepts</span>
+            <strong>6</strong>
+            <span>Logo Designs</span>
         </div>
+
 
         <div class="stat">
             <strong>16:9</strong>
             <span>YouTube Optimized</span>
         </div>
 
+
         <div class="stat">
             <strong>100%</strong>
             <span>Creative Focus</span>
         </div>
+
 
     </div>
 
@@ -743,20 +999,27 @@ footer{
 </section>
 
 
+<!-- CONTACT -->
+
 <section id="contact">
 
 <div class="container">
 
     <div class="contact-card reveal">
 
-        <div class="eyebrow">Let's Create Something Great</div>
+        <div class="eyebrow">
+            Let's Create Something Great
+        </div>
 
-        <h2>Have a project in mind?</h2>
+        <h2>
+            Have a project in mind?
+        </h2>
 
         <p>
             Contact me for Minecraft thumbnail design,
-            logo work and visual collaborations.
+            logo work and creative visual collaborations.
         </p>
+
 
         <div class="socials">
 
@@ -765,14 +1028,18 @@ footer{
                 href="https://instagram.com/EXtronXD01"
                 target="_blank"
                 rel="noopener noreferrer">
+
                 Instagram · @EXtronXD01
+
             </a>
+
 
             <button
                 class="social"
-                onclick="copyDiscord()"
-                style="border:0;cursor:pointer;font:inherit;">
+                onclick="copyDiscord()">
+
                 Discord · EXtronXD01
+
             </button>
 
         </div>
@@ -784,24 +1051,40 @@ footer{
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
-    <div class="container">
-        © <span id="year"></span> EXtronXD01 · Minecraft Visual Designer
-    </div>
+
+<div class="container">
+
+    © <span id="year"></span>
+    EXtronXD01 · Minecraft Visual Designer
+
+</div>
+
 </footer>
 
 
+<!-- IMAGE LIGHTBOX -->
+
 <div class="lightbox" id="lightbox">
-    <img id="lightboxImage" alt="Portfolio Preview">
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt="Portfolio Preview">
+
 </div>
 
 
 <script>
 
-/* COPYRIGHT YEAR */
+
+/* CURRENT YEAR */
 
 document.getElementById("year").textContent =
 new Date().getFullYear();
+
 
 
 /* SCROLL REVEAL */
@@ -810,11 +1093,12 @@ const observer = new IntersectionObserver(entries => {
 
     entries.forEach(entry => {
 
-        if(entry.isIntersecting){
+        if(entry.isIntersecting) {
 
             entry.target.classList.add("visible");
 
             observer.unobserve(entry.target);
+
         }
 
     });
@@ -824,21 +1108,28 @@ const observer = new IntersectionObserver(entries => {
 });
 
 
-document.querySelectorAll(".reveal").forEach(element => {
+document
+.querySelectorAll(".reveal")
+.forEach(element => {
+
     observer.observe(element);
+
 });
 
 
-/* IMAGE LIGHTBOX */
+
+/* LIGHTBOX */
 
 const lightbox =
 document.getElementById("lightbox");
+
 
 const lightboxImage =
 document.getElementById("lightboxImage");
 
 
-document.querySelectorAll(".work img,.logo-card img")
+document
+.querySelectorAll(".work img, .logo-card img")
 .forEach(image => {
 
     image.addEventListener("click", () => {
@@ -846,6 +1137,7 @@ document.querySelectorAll(".work img,.logo-card img")
         lightboxImage.src = image.src;
 
         lightbox.classList.add("active");
+
     });
 
 });
@@ -860,24 +1152,46 @@ lightbox.addEventListener("click", () => {
 
 document.addEventListener("keydown", event => {
 
-    if(event.key === "Escape"){
+    if(event.key === "Escape") {
 
         lightbox.classList.remove("active");
+
     }
 
 });
 
 
-/* DISCORD COPY */
 
-function copyDiscord(){
+/* COPY DISCORD ID */
 
-    navigator.clipboard.writeText("EXtronXD01");
+function copyDiscord() {
 
-    alert("Discord ID copied: EXtronXD01");
+    const discordID = "EXtronXD01";
+
+    if(navigator.clipboard) {
+
+        navigator.clipboard.writeText(discordID)
+        .then(() => {
+
+            alert("Discord ID copied: " + discordID);
+
+        })
+        .catch(() => {
+
+            alert("Discord ID: " + discordID);
+
+        });
+
+    } else {
+
+        alert("Discord ID: " + discordID);
+
+    }
+
 }
+
 
 </script>
 
 </body>
-  </html>
+</html>
